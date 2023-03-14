@@ -1,0 +1,57 @@
+deepinder.kaur2@csa1:~$ script script2.txt
+Script started, output log file is 'script2.txt'.
+deepinder.kaur2@csa1:~$ gdb assign1b
+GNU gdb (GDB) Fedora 12.1-1.fc36
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign1b...
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+Debuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+(No debugging symbols found in assign1b)
+(gdb) b *end
+Breakpoint 1 at 0x40075c
+(gdb) run
+Starting program: /home/ugc/deepinder.kaur2/assign1b 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+If x19 = -10, then x25 = -253. Current x26 = -253
+If x19 = -9, then x25 = -366. Current x26 = -253
+If x19 = -8, then x25 = -415. Current x26 = -253
+If x19 = -7, then x25 = -412. Current x26 = -253
+If x19 = -6, then x25 = -369. Current x26 = -253
+If x19 = -5, then x25 = -298. Current x26 = -253
+If x19 = -4, then x25 = -211. Current x26 = -211
+If x19 = -3, then x25 = -120. Current x26 = -120
+If x19 = -2, then x25 = -37. Current x26 = -37
+If x19 = -1, then x25 = 26. Current x26 = 26
+If x19 = 0, then x25 = 57. Current x26 = 57
+If x19 = 1, then x25 = 44. Current x26 = 57
+If x19 = 2, then x25 = -25. Current x26 = 57
+If x19 = 3, then x25 = -162. Current x26 = 57
+If x19 = 4, then x25 = -379. Current x26 = 57
+
+Breakpoint 1, 0x000000000040075c in end ()
+(gdb) p $x26
+$1 = 57
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 171611] will be killed.
+
+Quit anyway? (y or n) y

@@ -1,0 +1,192 @@
+Script started on 2023-01-31 15:27:33-07:00 [TERM="xterm-256color" TTY="/dev/pts/8" COLUMNS="233" LINES="34"]
+]0;deepinder.kaur2@csa1:~[?2004hdeepinder.kaur2@csa1:~$ [7mgcc assign1a.s -o assign1a[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgcc assign1a.s -o assign1a
+[?2004l]0;deepinder.kaur2@csa1:~[?2004hdeepinder.kaur2@csa1:~$ [7mgdb assign1a[27mgdb assign1a
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign1a[m...
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+(No debugging symbols found in [32massign1a[m)
+[?2004h(gdb) [7mb *main[27mb *main
+[?2004lBreakpoint 1 at [34m0x4006c4[m
+[?2004h(gdb) run
+[?2004lStarting program: [32m/home/ugc/deepinder.kaur2/assign1a[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [34m0x00000000004006c4[m in [33mmain[m ()
+[?2004h[?2004l[?2004h(gdb) [7mdisplay/i $pc[27m[C[C[C[C[C[Cdisplay/i $pc
+[?2004l1: x/i $pc
+=> [34m0x4006c4[m <[33mmain[m>:	stp	x29, x30, [sp, #-16]!
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006c8[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006c8[m <[33mmain[m+4>:	mov	x29, sp
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006cc[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006cc[m <[33mmain[m+8>:	mov	x19, #0xfffffffffffffff6    	// #-10
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006d0[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006d0[m <[33mmain[m+12>:	mov	x25, #0x0                   	// #0
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006d4[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006d4[m <[33mmain[m+16>:	mov	x26, #0x0                   	// #0
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006d8[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006d8[m <[33mmain[m+20>:	mov	x21, #0x0                   	// #0
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006dc[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x4006dc[m <[33mloop[m>:	cmp	x19, #0x4
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006e0[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x4006e0[m <[33mloop[m+4>:	b.gt	[34m0x40075c[m <[33mend[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006e4[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x4006e4[m <[33mloop[m+8>:	mov	x20, #0xfffffffffffffffe    	// #-2
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006e8[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x4006e8[m <[33mloop[m+12>:	mov	x23, #0xffffffffffffffea    	// #-22
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006ec[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x4006ec[m <[33mloop[m+16>:	mov	x24, #0xb                   	// #11
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006f0[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x4006f0[m <[33mloop[m+20>:	mov	x22, #0x39                  	// #57
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006f4[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x4006f4[m <[33mloop[m+24>:	mul	x20, x20, x19
+[?2004h[?2004l[?2004h(gdb) in
+[?2004lAmbiguous command "in": inf, inferior, info, init-if-undefined, inspect, internals, interpreter-exec, interrupt.
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006f8[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x4006f8[m <[33mloop[m+28>:	mul	x20, x20, x19
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006fc[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x4006fc[m <[33mloop[m+32>:	mul	x20, x20, x19
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400700[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x400700[m <[33mloop[m+36>:	mul	x23, x23, x19
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400704[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x400704[m <[33mloop[m+40>:	mul	x23, x23, x19
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400708[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x400708[m <[33mloop[m+44>:	mul	x24, x24, x19
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x000000000040070c[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x40070c[m <[33mloop[m+48>:	add	x25, x20, x23
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400710[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x400710[m <[33mloop[m+52>:	add	x25, x25, x24
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400714[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x400714[m <[33mloop[m+56>:	add	x25, x25, x22
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400718[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x400718[m <[33mloop[m+60>:	cmp	x21, #0x0
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x000000000040071c[m in [33mloop[m ()
+1: x/i $pc
+=> [34m0x40071c[m <[33mloop[m+64>:	b.eq	[34m0x400730[m <[33mflag[m>  // b.none
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400730[m in [33mflag[m ()
+1: x/i $pc
+=> [34m0x400730[m <[33mflag[m>:	mov	x26, x25
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400734[m in [33mflag[m ()
+1: x/i $pc
+=> [34m0x400734[m <[33mflag[m+4>:	b	[34m0x400738[m <[33moutput[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400738[m in [33moutput[m ()
+1: x/i $pc
+=> [34m0x400738[m <[33moutput[m>:	adrp	x0, [34m0x400000[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x000000000040073c[m in [33moutput[m ()
+1: x/i $pc
+=> [34m0x40073c[m <[33moutput[m+4>:	add	x0, x0, #0x698
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400740[m in [33moutput[m ()
+1: x/i $pc
+=> [34m0x400740[m <[33moutput[m+8>:	mov	x1, x19
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400744[m in [33moutput[m ()
+1: x/i $pc
+=> [34m0x400744[m <[33moutput[m+12>:	mov	x2, x25
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400748[m in [33moutput[m ()
+1: x/i $pc
+=> [34m0x400748[m <[33moutput[m+16>:	mov	x3, x26
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x000000000040074c[m in [33moutput[m ()
+1: x/i $pc
+=> [34m0x40074c[m <[33moutput[m+20>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004lIf x = -10, then y = -253. Current max = -253
+[34m0x0000000000400750[m in [33moutput[m ()
+1: x/i $pc
+=> [34m0x400750[m <[33moutput[m+24>:	add	x19, x19, #0x1
+[?2004h[?2004l[?2004h(gdb) ni[K[K[7mp $x19[27mp $x19
+[?2004l$1 = -10
+[?2004h(gdb) [7mp $x25[27mp $x25
+[?2004l$2 = -253
+[?2004h(gdb) [7mp $x26[27mp $x26
+[?2004l$3 = -253
+[?2004h(gdb) c
+[?2004lContinuing.
+If x = -9, then y = -366. Current max = -253
+If x = -8, then y = -415. Current max = -253
+If x = -7, then y = -412. Current max = -253
+If x = -6, then y = -369. Current max = -253
+If x = -5, then y = -298. Current max = -253
+If x = -4, then y = -211. Current max = -211
+If x = -3, then y = -120. Current max = -120
+If x = -2, then y = -37. Current max = -37
+If x = -1, then y = 26. Current max = 26
+If x = 0, then y = 57. Current max = 57
+If x = 1, then y = 44. Current max = 57
+If x = 2, then y = -25. Current max = 57
+If x = 3, then y = -162. Current max = 57
+If x = 4, then y = -379. Current max = 57
+[Inferior 1 (process 174201) exited with code 052]
+[?2004h[?2004l[?2004h(gdb) q
+[?2004l]0;deepinder.kaur2@csa1:~[?2004hdeepinder.kaur2@csa1:~$ exit
+[?2004lexit
+
+Script done on 2023-01-31 15:29:37-07:00 [COMMAND_EXIT_CODE="0"]

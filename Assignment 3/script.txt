@@ -1,0 +1,590 @@
+Script started on 2023-03-03 16:26:32-07:00 [TERM="xterm-256color" TTY="/dev/pts/29" COLUMNS="251" LINES="31"]
+]0;deepinder.kaur2@csa1:~[?2004hdeepinder.kaur2@csa1:~$ gdb a.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32ma.o[m...
+[?2004h(gdb) b main
+[?2004lBreakpoint 1 at [34m0x400708[m: file [32ma.s[m, line 46.
+[?2004h(gdb) t[Kb test1
+[?2004lBreakpoint 2 at [34m0x400768[m: file [32ma.s[m, line 81.
+[?2004h(gdb) b t[K[K test2
+[?2004lBreakpoint 3 at [34m0x40082c[m: file [32ma.s[m, line 155.
+[?2004h(gdb) b test3
+[?2004lBreakpoint 4 at [34m0x4007d4[m: file [32ma.s[m, line 125.
+[?2004h(gdb) run
+[?2004lStarting program: [32m/home/ugc/deepinder.kaur2/a.o[m 
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32ma.s[m:46
+46	    stp     fp[31m,[m lr[31m,[m [31m[[m[32msp[m[31m,[m alloc[31m]![m                            [31m//[mallocating
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400708[m <[33mmain[m>:	stp	x29, x30, [sp, #-96]!
+[?2004h(gdb) ni
+[?2004l47	    [01;34mmov[m     fp[31m,[m [32msp[m                                          [31m//[m[01;34mmov[m x[35m29[m[31m,[m [32msp[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l49	    [01;34mmov[m     x[35m23[m[31m,[m fp                                        [31m//[msetting x[35m23[m to fp
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l50	    [01;34madd[m     x[35m23[m[31m,[m x[35m23[m[31m,[m b_s                                 [31m//[mx[35m23[m location by adding [01;34moffset[m to fp
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l52	    ldr     w[35m19[m[31m,[m [31m[[mfp[31m,[m i_s[31m][m                                    [31m//[mload index from i_s
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l53	    [01;34mmov[m     w[35m19[m[31m,[m [35m0[m                                            [31m//[msetting index to [35m0[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l54	    [01;34mstr[m     w[35m19[m[31m,[m [31m[[mfp[31m,[m i_s[31m][m                                    [31m//[mstore index
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l56	    adrp    x[35m0[m[31m,[m printLabel[35m2[m                                 [31m//[mprint
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l57	    [01;34madd[m     x[35m0[m[31m,[m x[35m0[m[31m,[m [31m:[mlo[35m12[m[31m:[mprintLabel[35m2[m                       [31m//[mprint
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l58	    [32mbl[m      printf                                          [31m//[m[01;34mcall[m to printf
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l
+Unsorted Array: 
+60	    b       test[35m1[m                                           [31m//[mjump to test[35m1[m
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400730[m <[33mmain[m+40>:	b	[34m0x400768[m <[33mtest1[m>
+[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l82	    b[31m.[m[01;34mlt[m    loop[35m1[m                                           [31m//[mif w[35m19[m [31m<[m [35m50[m[31m,[m continue with the [01;34mloop[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mloop1[m () at [32ma.s[m:63
+63	    ldr     w[35m19[m[31m,[m [31m[[mfp[31m,[m i_s[31m][m                                    [31m//[mload index from i_s
+[?2004h[?2004l[?2004h(gdb) ni[K[Kc
+[?2004lContinuing.
+v[0]: 103
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[1]: 198
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[2]: 105
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[3]: 115
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[4]: 81
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[5]: 255
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[6]: 74
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l82	    b[31m.[m[01;34mlt[m    loop[35m1[m                                           [31m//[mif w[35m19[m [31m<[m [35m50[m[31m,[m continue with the [01;34mloop[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mloop1[m () at [32ma.s[m:63
+63	    ldr     w[35m19[m[31m,[m [31m[[mfp[31m,[m i_s[31m][m                                    [31m//[mload index from i_s
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l64	    [32mbl[m      rand                                            [31m//[mgenerate random nums
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l65	    [01;34mand[m     w[35m24[m[31m,[m w[35m0[m[31m,[m [35m0xFF[m                             [31m//[mv[31m[[mw[35m19[m[31m][m [31m=[m rand[31m()[m [31m&[m [35m0xFF[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l66	    [01;34mstr[m     w[35m24[m[31m,[m [31m[[mx[35m23[m[31m,[m w[35m19[m[31m,[m SXTW [35m2[m[31m][m                    [31m//[mstore results 
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l68	    ldr     w[35m24[m[31m,[m [31m[[mx[35m23[m[31m,[m w[35m19[m[31m,[m SXTW [35m2[m[31m][m                    [31m//[mload w[35m24[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l70	    adrp    x[35m0[m[31m,[m printArray                                  [31m//[mprint
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l71	    [01;34madd[m     x[35m0[m[31m,[m x[35m0[m[31m,[m [31m:[mlo[35m12[m[31m:[mprintArray                        [31m//[mprint
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l72	    [01;34mmov[m     w[35m1[m[31m,[m w[35m19[m                                           [31m//[mmoving w[35m19[m value to w[35m1[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l73	    [01;34mmov[m     w[35m2[m[31m,[m w[35m24[m                                   [31m//[mmoving w[35m24[m to w[35m2[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l74	    [32mbl[m      printf                                          [31m//[m[01;34mcall[m to printf
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004lv[7]: 236
+76	    [01;34mmov[m     w[35m22[m[31m,[m [35m0[m                                         [31m//[msetting w[35m22[m to [35m0[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l77	    [01;34madd[m     w[35m19[m[31m,[m w[35m19[m[31m,[m [35m1[m                                         [31m//[mw[35m19[m[31m++[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l78	    [01;34mstr[m     w[35m19[m[31m,[m [31m[[mfp[31m,[m i_s[31m][m                                    [31m//[mstore w[35m19[m on stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) ni[K[Kc
+[?2004lContinuing.
+v[8]: 41
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[9]: 205
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[10]: 186
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[11]: 171
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[12]: 242
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[13]: 251
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[14]: 227
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[15]: 70
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[16]: 124
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[17]: 194
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[18]: 84
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[19]: 248
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[20]: 27
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[21]: 232
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[22]: 231
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[23]: 141
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[24]: 118
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[25]: 90
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[26]: 46
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[27]: 99
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[28]: 51
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[29]: 159
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[30]: 201
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[31]: 154
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[32]: 102
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[33]: 50
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[34]: 13
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[35]: 183
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[36]: 49
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[37]: 88
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[38]: 163
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[39]: 90
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[40]: 37
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[41]: 93
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[42]: 5
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[43]: 23
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[44]: 88
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[45]: 233
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[46]: 94
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[47]: 212
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[48]: 171
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+v[49]: 178
+
+Breakpoint 2, [33mtest1[m () at [32ma.s[m:81
+81	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+
+Sorted Array: 
+
+Breakpoint 3, [33mtest2[m () at [32ma.s[m:155
+155	    [01;34mcmp[m     w[35m19[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m19[m to [01;34msize[m
+[?2004h[?2004l[?2004h(gdb)  v[K[K[7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40082c[m <[33mtest2[m>:	cmp	w19, #0x32
+[?2004h(gdb) ni
+[?2004l156	    b[31m.[m[01;34mlt[m    loop[35m2[mb                                          [31m//[mif w[35m19[m [31m<[m [35m50[m[31m,[m continue with the [01;34mloop[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mloop2b[m () at [32ma.s[m:95
+95	    [01;34mmov[m     w[35m21[m[31m,[m w[35m19[m                                          [31m//[msetting w[35m21[m [31m=[m w[35m19[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l96	    [01;34mstr[m     w[35m21[m[31m,[m [31m[[mfp[31m,[m min_s[31m][m                                [31m//[mstore w[35m21[m on stack
+[?2004h[?2004l[?2004h(gdb) ni[K[K[7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40078c[m <[33mloop2b[m+4>:	str	w21, [x29, #24]
+[?2004h(gdb) ni
+[?2004l98	    ldr     w[35m20[m[31m,[m [31m[[mfp[31m,[m j_s[31m][m                                    [31m//[mload w[35m20[m from stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l99	    ldr     w[35m19[m[31m,[m [31m[[mfp[31m,[m i_s[31m][m                                    [31m//[mload w[35m19[m from stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l100	    [01;34mmov[m     w[35m20[m[31m,[m w[35m19[m                                            [31m//[mset w[35m20[m [31m=[m w[35m19[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l101	    [01;34madd[m     w[35m20[m[31m,[m w[35m20[m[31m,[m [35m1[m                                         [31m//[mw[35m20[m[31m++[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l102	    [01;34mstr[m     w[35m20[m[31m,[m [31m[[mfp[31m,[m j_s[31m][m                                    [31m//[mstore w[35m20[m on stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l104	    b       test[35m3[m                                           [31m//[mjump to test[35m3[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l
+Breakpoint 4, [33mtest3[m () at [32ma.s[m:125
+125	    ldr     w[35m20[m[31m,[m [31m[[mfp[31m,[m j_s[31m][m                                    [31m//[mload w[35m20[m from stack
+[?2004h[?2004l[?2004h(gdb) n[K[7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x4007d4[m <[33mtest3[m>:	ldr	w20, [x29, #20]
+[?2004h(gdb) ni
+[?2004l126	    [01;34mcmp[m     w[35m20[m[31m,[m [01;34msize[m                                         [31m//[mcompare w[35m20[m [01;34mand[m [01;34msize[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l127	    b[31m.[m[01;34mlt[m    loop[35m3[m                                           [31m//[mif w[35m19[m [31m<[m [35m50[m[31m,[m comtinue with the [01;34mloop[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mloop3[m () at [32ma.s[m:107
+107	    ldr     w[35m21[m[31m,[m [31m[[mfp[31m,[m min_s[31m][m                                [31m//[mload w[35m21[m from stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l108	    ldr     w[35m20[m[31m,[m [31m[[mfp[31m,[m j_s[31m][m                                    [31m//[mload w[35m20[m from stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l110	    ldr     w[35m25[m[31m,[m [31m[[mx[35m23[m[31m,[m w[35m21[m[31m,[m SXTW [35m2[m[31m][m                      [31m//[mload v[31m[[mw[35m21[m[31m][m from stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l111	    ldr     w[35m26[m[31m,[m [31m[[mx[35m23[m[31m,[m w[35m20[m[31m,[m SXTW [35m2[m[31m][m                          [31m//[mload v[31m[[mw[35m20[m[31m][m from stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l113	    [01;34mcmp[m     w[35m25[m[31m,[m w[35m26[m                                      [31m//[mcompare v[31m[[mw[35m21[m[31m][m [31m&[m v[31m[[mw[35m20[m[31m][m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l114	    b[31m.[m[01;34mlt[m    next                                            [31m//[mjump to next
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mnext[m () at [32ma.s[m:120
+120	    ldr     w[35m20[m[31m,[m [31m[[mfp[31m,[m j_s[31m][m                                    [31m//[mload w[35m20[m from stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l121	    [01;34madd[m     w[35m20[m[31m,[m w[35m20[m[31m,[m [35m1[m                                         [31m//[mw[35m20[m[31m++[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l122	    [01;34mstr[m     w[35m20[m[31m,[m [31m[[mfp[31m,[m j_s[31m][m                                    [31m//[mstore w[35m20[m on stack
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l
+Breakpoint 4, [33mtest3[m () at [32ma.s[m:125
+125	    ldr     w[35m20[m[31m,[m [31m[[mfp[31m,[m j_s[31m][m                                    [31m//[mload w[35m20[m from stack
+[?2004h[?2004l[?2004h(gdb) n[Kc
+[?2004lContinuing.
+
+Breakpoint 4, [33mtest3[m () at [32ma.s[m:125
+125	    ldr     w[35m20[m[31m,[m [31m[[mfp[31m,[m j_s[31m][m                                    [31m//[mload w[35m20[m from stack
+[?2004h[?2004l[?2004h(gdb) d
+[?2004l[?2004hDelete all breakpoints? (y or n) y
+[?2004l[?2004h(gdb) run
+[?2004l[?2004hThe program being debugged has been started already.
+Start it from the beginning? (y or n) y
+[?2004lStarting program: [32m/home/ugc/deepinder.kaur2/a.o[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Unsorted Array: 
+v[0]: 103
+v[1]: 198
+v[2]: 105
+v[3]: 115
+v[4]: 81
+v[5]: 255
+v[6]: 74
+v[7]: 236
+v[8]: 41
+v[9]: 205
+v[10]: 186
+v[11]: 171
+v[12]: 242
+v[13]: 251
+v[14]: 227
+v[15]: 70
+v[16]: 124
+v[17]: 194
+v[18]: 84
+v[19]: 248
+v[20]: 27
+v[21]: 232
+v[22]: 231
+v[23]: 141
+v[24]: 118
+v[25]: 90
+v[26]: 46
+v[27]: 99
+v[28]: 51
+v[29]: 159
+v[30]: 201
+v[31]: 154
+v[32]: 102
+v[33]: 50
+v[34]: 13
+v[35]: 183
+v[36]: 49
+v[37]: 88
+v[38]: 163
+v[39]: 90
+v[40]: 37
+v[41]: 93
+v[42]: 5
+v[43]: 23
+v[44]: 88
+v[45]: 233
+v[46]: 94
+v[47]: 212
+v[48]: 171
+v[49]: 178
+
+Sorted Array: 
+v[0]: 5
+v[1]: 13
+v[2]: 23
+v[3]: 27
+v[4]: 37
+v[5]: 41
+v[6]: 46
+v[7]: 49
+v[8]: 50
+v[9]: 51
+v[10]: 70
+v[11]: 74
+v[12]: 81
+v[13]: 84
+v[14]: 88
+v[15]: 88
+v[16]: 90
+v[17]: 90
+v[18]: 93
+v[19]: 94
+v[20]: 99
+v[21]: 102
+v[22]: 103
+v[23]: 105
+v[24]: 115
+v[25]: 118
+v[26]: 124
+v[27]: 141
+v[28]: 154
+v[29]: 159
+v[30]: 163
+v[31]: 171
+v[32]: 171
+v[33]: 178
+v[34]: 183
+v[35]: 186
+v[36]: 194
+v[37]: 198
+v[38]: 201
+v[39]: 205
+v[40]: 212
+v[41]: 227
+v[42]: 231
+v[43]: 232
+v[44]: 233
+v[45]: 236
+v[46]: 242
+v[47]: 248
+v[48]: 251
+v[49]: 255
+[Inferior 1 (process 4025442) exited normally]
+[?2004h[?2004l[?2004h(gdb) q
+[?2004l]0;deepinder.kaur2@csa1:~[?2004hdeepinder.kaur2@csa1:~$ exit
+[?2004lexit
+
+Script done on 2023-03-03 16:29:12-07:00 [COMMAND_EXIT_CODE="0"]

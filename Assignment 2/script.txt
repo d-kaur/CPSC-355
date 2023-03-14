@@ -1,0 +1,151 @@
+Script started on 2023-02-10 00:06:10-07:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="220" LINES="56"]
+]0;deepinder.kaur2@csa3:~[?2004hdeepinder.kaur2@csa3:~$ gdb assign2a.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign2a.o[m...
+[?2004h(gdb) b main
+[?2004lBreakpoint 1 at [34m0x400714[m: file [32massign2a.s[m, line 32.
+[?2004h(gdb) b step1
+[?2004lBreakpoint 2 at [34m0x400754[m: file [32massign2a.s[m, line 53.
+[?2004h(gdb) b printNext
+[?2004lBreakpoint 3 at [34m0x40079c[m: file [32massign2a.s[m, line 84.
+[?2004h(gdb) b end
+[?2004lBreakpoint 4 at [34m0x4007dc[m: file [32massign2a.s[m, line 106.
+[?2004h(gdb) run
+[?2004lStarting program: [32m/home/ugc/deepinder.kaur2/assign2a.o[m 
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32massign2a.s[m:32
+32	        stp     x[35m29[m[31m,[mx[35m30[m[31m,[[m[32msp[m[31m,-[m[35m16[m[31m]![m                   [31m//[mstoring FP [01;34mand[m LP [01;34min[m stack with [35m2[m double spaces        
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l33	        [01;34mmov[m     x[35m29[m[31m,[m [32msp[m                             [31m//[mmove [32msp[m to FP   
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l35	        [01;34mmov[m     w[35m20[m[31m,[m [31m-[m[35m16843010[m             [31m//[mseting w[35m20[m to the value
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l36	        [01;34mmov[m     w[35m19[m[31m,[m [35m70[m                      [31m//[msetting w[35m19[m to the value  
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l37	        [01;34mmov[m     w[35m21[m[31m,[m [35m0[m                          [31m//[msetting w[35m21[m to [35m0[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l38	        [01;34mmov[m     w[35m22[m[31m,[m [35m0[m                                [31m//[msetting w[35m22[m to [35m0[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l40	        adrp    x[35m0[m[31m,[m initialValue                    [31m//[mset [35m1[m[32mst[m args to printf[31m()[m higher
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l41	        [01;34madd[m     x[35m0[m[31m,[m x[35m0[m[31m,[m [31m:[mlo[35m12[m[31m:[minitialValue          [31m//[mset [35m2[mnd args to printf[31m()[m lower
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l42	        [01;34mmov[m     w[35m1[m[31m,[m w[35m19[m                      [31m//[mmoving w[35m19[m value to w[35m1[m                                                                  
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l43	        [01;34mmov[m     w[35m2[m[31m,[m w[35m19[m                      [31m//[mmoving w[35m19[m value to w[35m2[m                                                               
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l44	        [01;34mmov[m     w[35m3[m[31m,[m w[35m20[m                    [31m//[mmoving w[35m20[m value [01;34minto[m w[35m3[m register                                                          
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l45	        [01;34mmov[m     w[35m4[m[31m,[m w[35m20[m                    [31m//[mmoving w[35m20[m value [01;34minto[m w[35m4[m 
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l46	        [32mbl[m      printf                              [31m//[m[01;34mcall[m to printf 
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004lmultiplier = 0x00000046 (70) multiplicand = 0xfefefefe (-16843010)
+
+48	        [01;34mcmp[m     w[35m19[m[31m,[m [35m0[m                       [31m//[mchecking step[35m1[m the w[35m19[m is [31m-[mive 
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 2, [33mstep1[m () at [32massign2a.s[m:53
+53	        [01;34mmov[m     w[35m22[m[31m,[m [35m0[m                                [31m//[msetting w[35m22[m to [35m0[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l54		    b       [01;34mtest[m                                [31m//[mjump to [01;34mtest[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mtest[m () at [32massign2a.s[m:76
+76	        [01;34mcmp[m     w[35m22[m[31m,[m [35m32[m                               [31m//[mrepeated [01;34madd[m [01;34mand[m shift
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l77	        b[31m.[m[01;34mlt[m    step[35m2[m                               [31m//[mcompare w[35m22[m [31m<[m [35m32[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mstep2[m () at [32massign2a.s[m:57
+57	        tst     w[35m19[m[31m,[m [35m0x1[m                     [31m//[mcomparing w[35m19[m to [35m1[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l58	        b[31m.[m[01;34meq[m    step[35m3[m                               [31m//[mstep[35m1[m [01;34mnot[m equal[31m,[m jump tp step[35m3[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mstep3[m () at [32massign2a.s[m:62
+62	        asr     w[35m19[m[31m,[m w[35m19[m[31m,[m [35m1[m           [31m//[marthemtic shift right 
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l63	        tst     w[35m21[m[31m,[m [35m0x1[m                        [31m//[marthemtic shift right by [35m1[m of w[35m19[m                                           
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l64	        b[31m.[m[01;34meq[m    step[35m4[m                               
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mstep4[m () at [32massign2a.s[m:69
+69	        [01;34mand[m     w[35m19[m[31m,[m w[35m19[m[31m,[m [35m0x7FFFFFFF[m  [31m//[melse statement
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mstep5[m () at [32massign2a.s[m:72
+72	        asr     w[35m21[m[31m,[m w[35m21[m[31m,[m [35m1[m                 [31m//[marthmetic shift right of w[35m21[m by [35m1[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l73	        [01;34madd[m     w[35m22[m[31m,[m w[35m22[m[31m,[m [35m1[m                             [31m//[mincrementing w[35m22[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mtest[m () at [32massign2a.s[m:76
+76	        [01;34mcmp[m     w[35m22[m[31m,[m [35m32[m                               [31m//[mrepeated [01;34madd[m [01;34mand[m shift
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 3, [33mprintNext[m () at [32massign2a.s[m:84
+84	        adrp    x[35m0[m[31m,[m printProduct                    [31m//[mset [35m1[m[32mst[m args to printf[31m()[m higher
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l85	        [01;34madd[m     x[35m0[m[31m,[m x[35m0[m[31m,[m [31m:[mlo[35m12[m[31m:[mprintProduct          [31m//[mset [35m2[mnd args to printf[31m()[m lower
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l86	        [01;34mmov[m     w[35m1[m[31m,[m w[35m21[m                         [31m//[mmoving w[35m21[m value to w[35m1[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l87	        [01;34mmov[m     w[35m2[m[31m,[m w[35m19[m                      [31m//[mmoving w[35m19[m value to w[35m2[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l88	        [32mbl[m      printf                              [31m//[m[01;34mcall[m to printf
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004lproduct = 0xffffffff multiplier = 0xb9b9b974
+90	        sxtw    x[35m25[m[31m,[m w[35m21[m                      [31m//[mmoving w[35m21[m value [01;34minto[m x[35m25[m register
+[?2004h[?2004l[?2004h(gdb) x
+[?2004lArgument required (starting display address).
+[?2004h(gdb) c
+[?2004lContinuing.
+64-bit result = 0xffffffffb9b9b974 (-1179010700)
+
+Breakpoint 4, [33mend[m () at [32massign2a.s[m:106
+106	        [01;34mmov[m     w[35m0[m[31m,[m [35m0[m                               [31m//[mrestore registers
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l107	        ldp     x[35m29[m[31m,[m x[35m30[m[31m,[m [31m[[m[32msp[m[31m],[m [35m16[m                  [31m//[mldp restores [32msp[m to x[35m29[m [01;34mand[m x[35m30[m then do [32msp[m [31m+[m [35m16[m [01;34mand[m set to [32msp[m
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33mend[m () at [32massign2a.s[m:109
+109	        [01;34mret[m                                         [31m//[mreturn to os
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33m__libc_start_call_main[m ([36mmain[m=0x4005b4 <_start+52>, [36mmain@entry[m=0x20, [36margc[m=1, [36margc@entry[m=-16843010, [36margv[m=0xffffffffef38, [36margv@entry[m=0xb9b9b974) at [32m../sysdeps/nptl/libc_start_call_main.h[m:74
+nDownloading 0.00 MB source file [32m/usr/src/debug/glibc-2.35-15.fc36.aarch64/csu/../sysdeps/nptl/libc_start_call_main.h[m
+i74	  [01mexit[m [31m([mresult[31m);[m
+[?2004h[?2004l[?2004h(gdb) ni[K[Kexit
+[?2004l[?2004hA debugging session is active.
+
+	Inferior 1 [process 1130886] will be killed.
+
+Quit anyway? (y or n) n
+[?2004lNot confirmed.
+[?2004h(gdb) ni
+[?2004l[Inferior 1 (process 1130886) exited normally]
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lThe program is not being run.
+[?2004h(gdb) q
+[?2004l]0;deepinder.kaur2@csa3:~[?2004hdeepinder.kaur2@csa3:~$ exit
+[?2004lexit
+
+Script done on 2023-02-10 00:08:39-07:00 [COMMAND_EXIT_CODE="0"]
