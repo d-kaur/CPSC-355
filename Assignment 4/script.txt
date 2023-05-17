@@ -1,0 +1,193 @@
+Script started on 2023-03-17 00:49:35-06:00 [TERM="xterm-256color" TTY="/dev/pts/69" COLUMNS="118" LINES="15"]
+]0;deepinder.kaur2@csa1:~[?2004hdeepinder.kaur2@csa1:~$ gdb assign[K[K[K[K[K.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+[?2004h--Type <RET> for more, q to quit, c to continue without paging--yes
+[?2004lType "apropos word" to search for commands related to "word"...
+Reading symbols from [32ma.o[m...
+[?2004h(gdb) b main
+[?2004lBreakpoint 1 at [34m0x400704[m: file [32ma.s[m, line 70.
+[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004lNo registers.
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/ugc/deepinder.kaur2/a.o[m 
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32ma.s[m:70
+70	    stp     fp[31m,[m lr[31m,[m [31m[[m[32msp[m[31m,[m alloc[31m]![m                            [31m//[mallocating
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400704[m <[33mmain[m>:	stp	x29, x30, [sp, #-48]!
+[?2004h(gdb) ni
+[?2004l71	    [01;34mmov[m     fp[31m,[m [32msp[m                                          [31m//[m[01;34mmov[m x[35m29[m[31m,[m [32msp[m
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400708[m <[33mmain[m+4>:	mov	x29, sp
+[?2004h(gdb) ni
+[?2004l73	    [01;34madd[m     x[35m8[m[31m,[m fp[31m,[m firstSphere                             [31m//[mx[35m8[m [31m=[m fp [31m+[m firstSphere                              
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40070c[m <[33mmain[m+8>:	add	x8, x29, #0x10
+[?2004h(gdb) ni
+[?2004l74	    [32mbl[m      newSphere                                       [31m//[m[01;34mcall[m to newSphere
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400710[m <[33mmain[m+12>:	bl	[34m0x4007ec[m <[33mnewSphere[m>
+[?2004h(gdb) ni
+[?2004l76	    [01;34madd[m     x[35m8[m[31m,[m fp[31m,[m secondSphere                                      
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400714[m <[33mmain[m+16>:	add	x8, x29, #0x20
+[?2004h(gdb) ni
+[?2004l77	    [32mbl[m      newSphere                           
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400718[m <[33mmain[m+20>:	bl	[34m0x4007ec[m <[33mnewSphere[m>
+[?2004h(gdb) ni
+[?2004l79	    adrp    x[35m0[m[31m,[m iValue                                      [31m//[mprint Intial Value
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40071c[m <[33mmain[m+24>:	adrp	x0, [34m0x400000[m
+[?2004h(gdb) ni
+[?2004l80	    [01;34madd[m     x[35m0[m[31m,[m x[35m0[m[31m,[m [31m:[mlo[35m12[m[31m:[miValue
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400720[m <[33mmain[m+28>:	add	x0, x0, #0x698
+[?2004h(gdb) ni
+[?2004l81	    [32mbl[m      printf                                          [31m//[m[01;34mcall[m to printf
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400724[m <[33mmain[m+32>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h(gdb) ni
+[?2004l
+Initial sphere values:
+83	    adrp    x[35m0[m[31m,[m first                                       [31m//[mprint first
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400728[m <[33mmain[m+36>:	adrp	x0, [34m0x400000[m
+[?2004h(gdb) ni
+[?2004l84	    [01;34madd[m     x[35m0[m[31m,[m x[35m0[m[31m,[m [31m:[mlo[35m12[m[31m:[mfirst
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40072c[m <[33mmain[m+40>:	add	x0, x0, #0x6f7
+[?2004h(gdb) ni
+[?2004l85	    [01;34madd[m     x[35m1[m[31m,[m fp[31m,[m firstSphere
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400730[m <[33mmain[m+44>:	add	x1, x29, #0x10
+[?2004h(gdb) ni
+[?2004l86	    [32mbl[m      print                                           [31m//[m[01;34mcall[m to print
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400734[m <[33mmain[m+48>:	bl	[34m0x4008d8[m <[33mprint[m>
+[?2004h(gdb) ni
+[?2004lSphere first origin = (0, 0, 0) radius = 1
+88	    adrp    x[35m0[m[31m,[m second                                      [31m//[mprint second
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400738[m <[33mmain[m+52>:	adrp	x0, [34m0x400000[m
+[?2004h(gdb) ni
+[?2004l89	    [01;34madd[m     x[35m0[m[31m,[m x[35m0[m[31m,[m [31m:[mlo[35m12[m[31m:[msecond
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40073c[m <[33mmain[m+56>:	add	x0, x0, #0x6fd
+[?2004h(gdb) ni
+[?2004l90	    [01;34madd[m     x[35m1[m[31m,[m fp[31m,[m secondSphere
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400740[m <[33mmain[m+60>:	add	x1, x29, #0x20
+[?2004h(gdb) ni
+[?2004l91	    [32mbl[m      print
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400744[m <[33mmain[m+64>:	bl	[34m0x4008d8[m <[33mprint[m>
+[?2004h(gdb) ni
+[?2004lSphere second origin = (0, 0, 0) radius = 1
+93	    [01;34madd[m     x[35m1[m[31m,[m fp[31m,[m firstSphere                             [31m//[mx[35m1[m [31m=[m fp [31m+[m firstSphere
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400748[m <[33mmain[m+68>:	add	x1, x29, #0x10
+[?2004h(gdb) ni
+[?2004l94	    [01;34madd[m     x[35m2[m[31m,[m fp[31m,[m secondSphere                            [31m//[mx[35m2[m [31m=[m fp [31m+[m secondSphere
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40074c[m <[33mmain[m+72>:	add	x2, x29, #0x20
+[?2004h(gdb) ni
+[?2004l96	    [32mbl[m      equal                                           [31m//[m[01;34mcall[m to equal
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400750[m <[33mmain[m+76>:	bl	[34m0x400870[m <[33mequal[m>
+[?2004h(gdb) ni
+[?2004l97	    ldr     x[35m20[m[31m,[m [31m[[mfp[31m,[m result_s[31m][m                             [31m//[mload x[35m20[m from stack
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400754[m <[33mmain[m+80>:	ldur	x20, [x29, #28]
+[?2004h(gdb) ni
+[?2004l99	    [01;34mcmp[m     x[35m20[m[31m,[m [35m0[m                                          [31m//[mcompare x[35m20[m t[35m0[m [35m0[m
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400758[m <[33mmain[m+84>:	cmp	x20, #0x0
+[?2004h(gdb) ni
+[?2004l101	    b[31m.[m[01;34meq[m    jump                                           [31m//[mbranch to jump
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40075c[m <[33mmain[m+88>:	b.eq	[34m0x400780[m <[33mjump[m>  // b.none
+[?2004h(gdb) nu[Ki
+[?2004l103	    [01;34madd[m     x[35m1[m[31m,[m fp[31m,[m firstSphere                             [31m//[mx[35m1[m [31m=[m fp [31m+[m firstSphere
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400760[m <[33mmain[m+92>:	add	x1, x29, #0x10
+[?2004h(gdb) ni
+[?2004l104	    [01;34mmov[m     w[35m3[m[31m,[m [31m-[m[35m5[m                                      [31m//[mmoving [31m-[m[35m5[m to w[35m3[m
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400764[m <[33mmain[m+96>:	mov	w3, #0xfffffffb            	// #-5
+[?2004h(gdb) ni
+[?2004l105	    [01;34mmov[m     w[35m4[m[31m,[m [35m3[m                                       [31m//[mmoving [35m3[m to w[35m4[m
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400768[m <[33mmain[m+100>:	mov	w4, #0x3                   	// #3
+[?2004h(gdb) ni
+[?2004l106	    [01;34mmov[m     w[35m5[m[31m,[m [35m2[m                                       [31m//[mmoving [35m2[m to w[35m5[m
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40076c[m <[33mmain[m+104>:	mov	w5, #0x2                   	// #2
+[?2004h(gdb) ni
+[?2004l108	    [32mbl[m      move                                            [31m//[mbranch to move
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400770[m <[33mmain[m+108>:	bl	[34m0x400820[m <[33mmove[m>
+[?2004h(gdb) ni
+[?2004l109	    [01;34madd[m     x[35m1[m[31m,[m fp[31m,[m secondSphere                            [31m//[mx[35m1[m [31m=[m fp [31m+[m secondSphere
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400774[m <[33mmain[m+112>:	add	x1, x29, #0x20
+[?2004h(gdb) ni
+[?2004l110	    [01;34mmov[m     w[35m6[m[31m,[m [35m8[m
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x400778[m <[33mmain[m+116>:	mov	w6, #0x8                   	// #8
+[?2004h(gdb) ni
+[?2004l111	    [32mbl[m      expand                                          [31m//[m[01;34mcall[m to expand
+[?2004h[?2004l[?2004h(gdb) [7mx/i $pc[27mx/i $pc
+[?2004l=> [34m0x40077c[m <[33mmain[m+120>:	bl	[34m0x400854[m <[33mexpand[m>
+[?2004h(gdb) bi
+[?2004lUndefined command: "bi".  Try "help".
+[?2004h(gdb) ni
+[?2004l
+Changed sphere values:
+Sphere first origin = (-5, 3, 2) radius = 1
+Sphere second origin = (0, 0, 0) radius = 8
+[Inferior 1 (process 887662) exited normally]
+[?2004h[?2004l[?2004h(gdb) [7mx/100ud $x20[27m[C[C[C[C[C[Cx/100ud $x20
+[?2004lNo registers.
+[?2004h(gdb) [7mx/100ud $x20[27m[K[C[C[C[C[C[C[1Px/100ud $x[K[K[K[K[K[K[K[K[K[Kni
+[?2004lThe program is not being run.
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/ugc/deepinder.kaur2/a.o[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32ma.s[m:70
+70	    stp     fp[31m,[m lr[31m,[m [31m[[m[32msp[m[31m,[m alloc[31m]![m                            [31m//[mallocating
+[?2004h[?2004l[?2004h(gdb) q
+[?2004l[?2004hA debugging session is active.
+
+	Inferior 1 [process 889534] will be killed.
+
+Quit anyway? (y or n) y
+[?2004l]0;deepinder.kaur2@csa1:~[?2004hdeepinder.kaur2@csa1:~$ quit
+[?2004lbash: quit: command not found
+]0;deepinder.kaur2@csa1:~[?2004hdeepinder.kaur2@csa1:~$ exit
+[?2004lexit
+
+Script done on 2023-03-17 00:55:56-06:00 [COMMAND_EXIT_CODE="127"]

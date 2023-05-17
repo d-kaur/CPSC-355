@@ -1,0 +1,88 @@
+Script started on 2023-04-01 14:51:46-06:00 [TERM="xterm-256color" TTY="/dev/pts/157" COLUMNS="78" LINES="55"]
+^M
+--------- Account Warning! ---------^M
+^[[31mYou have exceeded your quota!^[(B^[[m ^M
+ - Space: 1570M* / 1536M ^M
+ - Files: 13440 / 76800 ^M
+^M
+You have 5days to fall below the limit.^M
+^M
+To prevent loss of work, please: ^M
+ - Remove unused files.^M
+ - Contact us at the help desk for help.^M
+ - Request for a larger quota.^M
+^M
+Please use the disk usage analyzer to determine your largest ^M
+files and delete them if possible. ^M
+^M
+You may see your disk usage by running: ^M
+ quota -s ^M
+^M
+To see the biggest files, use the disk analyzer or run: ^M
+ du -a | sort -rn | head ^M
+^M
+For further assistance, please drop by the Help Desk^M
+Press [enter] to continue...^M
+^[]0;deepinder.kaur2@csa1:~^G^[[?2004hdeepinder.kaur2@csa1:~$ m4 a5b.asm > a.^H^[[Kb.a^H^[[Ks^M
+^[[?2004l^M^[]0;deepinder.kaur2@csa1:~^G^[[?2004hdeepinder.kaur2@csa1:~$ gcc ab.s -o as^H^[[Kb.o -g^M
+^[[?2004l^M^[]0;deepinder.kaur2@csa1:~^G^[[?2004hdeepinder.kaur2@csa1:~$ ./ab.o 10 06 2003^M
+^[[?2004l^MOctober 6th, 2003^M
+^[]0;deepinder.kaur2@csa1:~^G^[[?2004hdeepinder.kaur2@csa1:~$ ./ab.o 06 10 2003^M
+^[[?2004l^MJune 10th, 2003^M
+^[]0;deepinder.kaur2@csa1:~^G^[[?2004hdeepinder.kaur2@csa1:~$ ./ab.o 12 04 1888^M
+^[[?2004l^MDecember 4th, 1888^M
+^[]0;deepinder.kaur2@csa1:~^G^[[?2004hdeepinder.kaur2@csa1:~$ 45 25 0^M
+^[[?2004l^Mbash: 45: command not found^M
+^[]0;deepinder.kaur2@csa1:~^G^[[?2004hdeepinder.kaur2@csa1:~$ ./ab.o 45 12 2000^M
+^[[?2004l^Musage: a5b mm dd yyyy^M
+^[]0;deepinder.kaur2@csa1:~^G^[[?2004hdeepinder.kaur2@csa1:~$ exit^M
+^[[?2004l^Mexit^M
+
+Script done on 2023-04-01 14:53:47-06:00 [COMMAND_EXIT_CODE="22"]
+
+
+
+//my ssh isnt working correctly, above it what i copy and pasted using vim and below is the copy and paste of terminal
+
+deepinder.kaur2@csa1:~$ script script2.txt
+Script started, output log file is 'script2.txt'.
+
+--------- Account Warning! ---------
+You have exceeded your quota! 
+ - Space: 1570M* / 1536M 
+ - Files: 13440 / 76800 
+
+You have 5days to fall below the limit.
+
+To prevent loss of work, please: 
+ - Remove unused files.
+ - Contact us at the help desk for help.
+ - Request for a larger quota.
+
+Please use the disk usage analyzer to determine your largest 
+files and delete them if possible. 
+
+You may see your disk usage by running: 
+ quota -s 
+
+To see the biggest files, use the disk analyzer or run: 
+ du -a | sort -rn | head 
+
+For further assistance, please drop by the Help Desk
+Press [enter] to continue...
+deepinder.kaur2@csa1:~$ m4 a5b.asm > ab.s
+deepinder.kaur2@csa1:~$ gcc ab.s -o ab.o -g
+deepinder.kaur2@csa1:~$ ./ab.o 10 06 2003
+October 6th, 2003
+deepinder.kaur2@csa1:~$ ./ab.o 06 10 2003
+June 10th, 2003
+deepinder.kaur2@csa1:~$ ./ab.o 12 04 1888
+December 4th, 1888
+deepinder.kaur2@csa1:~$ 45 25 0
+bash: 45: command not found
+deepinder.kaur2@csa1:~$ ./ab.o 45 12 2000
+usage: a5b mm dd yyyy
+deepinder.kaur2@csa1:~$ exit
+exit
+Script done.
+deepinder.kaur2@csa1:~$ vim script2.txt

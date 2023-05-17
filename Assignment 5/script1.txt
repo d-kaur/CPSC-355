@@ -1,0 +1,49 @@
+deepinder.kaur2@csa3:~$ script script1.txt
+Script started, output log file is 'script1.txt'.
+
+--------- Account Warning! ---------
+You have exceeded your quota! 
+ - Space: 1570M* / 1536M 
+ - Files: 13444 / 76800 
+
+You have 5days to fall below the limit.
+
+To prevent loss of work, please: 
+ - Remove unused files.
+ - Contact us at the help desk for help.
+ - Request for a larger quota.
+
+Please use the disk usage analyzer to determine your largest 
+files and delete them if possible. 
+
+You may see your disk usage by running: 
+ quota -s 
+
+To see the biggest files, use the disk analyzer or run: 
+ du -a | sort -rn | head 
+
+For further assistance, please drop by the Help Desk
+Press [enter] to continue...
+deepinder.kaur2@csa3:~$ ./a5.o 1 0 - 2 3 + * =
+
+1 0 - 2 3 + * =
+
+5
+
+4 5 + 9 9 - * =
+
+0
+
+8 8 - 1 0 + * =
+
+0
+
+5 6 - 7 2 + * =
+
+-9
+
+exit
+unknown command e
+unknown command x
+unknown command i
+unknown command t
